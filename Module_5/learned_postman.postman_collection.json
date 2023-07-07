@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "87d87827-4e77-4080-ad31-824b0f6bbbba",
+		"name": "learned_postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27169768"
+	},
+	"item": [
+		{
+			"name": "basic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "status",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get_all_Products",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Products_by_Catagory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productsa?category=meat-seafood",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productsa"
+					],
+					"query": [
+						{
+							"key": "results",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "meat-seafood"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a single porduct details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/:productId?product-label=true",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						":productId"
+					],
+					"query": [
+						{
+							"key": "product-label",
+							"value": "true"
+						}
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "8554"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create a cart",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get a cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "HRclOSo6gU-pgJ5suJnaO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cart items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "HRclOSo6gU-pgJ5suJnaO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add an item to cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\":8753,\r\n    \"quantity\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId/items",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "HRclOSo6gU-pgJ5suJnaO"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://simple-grocery-store-api.online/",
+			"type": "string"
+		}
+	]
+}
